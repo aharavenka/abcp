@@ -14,7 +14,7 @@ $pdo = new PDO($dsn, $user, $password);
 $gateway = new UserGateway($pdo);
 $manager = new UserManager($gateway);
 
-$names = $_GET['names'];
+$names = $_GET['names'] ?? [];
 
 $manager->getUsersByNames([
    $names
